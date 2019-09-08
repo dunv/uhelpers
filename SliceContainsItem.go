@@ -8,7 +8,6 @@ import (
 // SliceContainsItem checks if a slice contains an item
 func SliceContainsItem(slice interface{}, item interface{}) bool {
 	s := reflect.ValueOf(slice)
-
 	if s.Kind() != reflect.Slice {
 		panic("SliceContainsItem() given a non-slice type")
 	}
