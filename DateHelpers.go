@@ -1,9 +1,8 @@
 package uhelpers
 
 import (
+	"fmt"
 	"time"
-
-	"github.com/dunv/ulog"
 )
 
 // Get first hour of a day
@@ -54,8 +53,7 @@ func FirstDayOfYear(reference time.Time) time.Time {
 func TimeFromMonthAndYear(year int, month int, timeZone string) (*time.Time, error) {
 	location, err := time.LoadLocation(timeZone)
 	if err != nil {
-		ulog.Infof("Could not load timezone %s. (%v)", timeZone, err)
-		return nil, err
+		return nil, fmt.Errorf("Could not load timezone %s. (%v)", timeZone, err)
 	}
 
 	date := time.Date(year, time.Month(month), 1, 0, 0, 0, 0, location)
