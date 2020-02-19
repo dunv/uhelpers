@@ -10,3 +10,14 @@ func IsMatchingStringPointerInMap(ptr1 *string, rawMap interface{}, key string, 
 	}
 	return false
 }
+
+func IsMatchingBoolPointerInMap(ptr1 *bool, rawMap interface{}, key string, bothNilReturnTrue ...bool) bool {
+	if m, ok := rawMap.(map[string]interface{}); ok {
+		if rawVal, ok := m[key]; ok {
+			if val, ok := rawVal.(*bool); ok {
+				return CompareBoolPointers(ptr1, val, bothNilReturnTrue...)
+			}
+		}
+	}
+	return false
+}
