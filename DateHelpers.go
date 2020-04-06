@@ -6,8 +6,9 @@ import (
 )
 
 // Get first hour of a day
-func FirstHourOfDay(reference time.Time) time.Time {
-	return time.Date(reference.Year(), reference.Month(), reference.Day(), 0, 0, 0, 0, reference.Location())
+func FirstHourOfDay(reference time.Time) *time.Time {
+	tmp := time.Date(reference.Year(), reference.Month(), reference.Day(), 0, 0, 0, 0, reference.Location())
+	return &tmp
 }
 
 // Figure out which day is the first of an ISOWeek
