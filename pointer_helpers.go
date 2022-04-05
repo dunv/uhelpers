@@ -37,3 +37,7 @@ func PtrToFloat64(s float64) *float64 {
 func PtrToDuration(s time.Duration) *time.Duration {
 	return &s
 }
+
+func Ptr[K string | time.Time | bool | int | int32 | int64 | float32 | float64 | time.Duration](in K) *K {
+	return &in
+}
