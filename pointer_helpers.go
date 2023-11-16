@@ -38,6 +38,6 @@ func PtrToDuration(s time.Duration) *time.Duration {
 	return &s
 }
 
-func Ptr[K string | time.Time | bool | int | int32 | int64 | float32 | float64 | time.Duration](in K) *K {
+func Ptr[T any](in T) *T {
 	return &in
 }
