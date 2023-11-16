@@ -1,23 +1,24 @@
-package uhelpers
+package uhelpers_test
 
 import (
 	"testing"
 	"time"
 
+	"github.com/dunv/uhelpers"
 	"github.com/stretchr/testify/require"
 )
 
 func TestPtr(t *testing.T) {
 	stringManual := "test"
-	stringPtr := Ptr(stringManual)
+	stringPtr := uhelpers.Ptr(stringManual)
 	require.Equal(t, stringPtr, &stringManual)
 
 	timeManual := time.Now()
-	timePtr := Ptr(timeManual)
+	timePtr := uhelpers.Ptr(timeManual)
 	require.Equal(t, timePtr, &timeManual)
 
 	boolManual := time.Now()
-	boolPtr := Ptr(boolManual)
+	boolPtr := uhelpers.Ptr(boolManual)
 	require.Equal(t, boolPtr, &boolManual)
 
 }
