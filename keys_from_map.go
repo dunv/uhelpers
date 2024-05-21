@@ -1,6 +1,6 @@
 package uhelpers
 
-func KeysFromMap(m map[string]any) []string {
+func KeysFromMap[T any](m map[string]T) []string {
 	keys := make([]string, len(m))
 	i := 0
 	for key := range m {
