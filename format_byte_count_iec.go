@@ -3,7 +3,7 @@ package uhelpers
 import "fmt"
 
 // From https://yourbasic.org/golang/formatting-byte-size-to-human-readable-format/
-func ByteCountIEC(b int64) string {
+func FormatByteCountIEC(b int64) string {
 	const unit = 1024
 	if b < unit {
 		return fmt.Sprintf("%dB", b)
