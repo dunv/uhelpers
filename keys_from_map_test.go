@@ -14,7 +14,9 @@ func TestKeysFromMapString(t *testing.T) {
 		"three": 3,
 	}
 	keys := uhelpers.KeysFromMap(m)
-	require.Equal(t, []string{"one", "two", "three"}, keys)
+	require.Contains(t, keys, "one")
+	require.Contains(t, keys, "two")
+	require.Contains(t, keys, "three")
 }
 
 func TestKeysFromMapCustomType(t *testing.T) {
@@ -28,5 +30,7 @@ func TestKeysFromMapCustomType(t *testing.T) {
 		three: 3,
 	}
 	keys := uhelpers.KeysFromMap(m)
-	require.Equal(t, []testType{one, two, three}, keys)
+	require.Contains(t, keys, one)
+	require.Contains(t, keys, two)
+	require.Contains(t, keys, three)
 }
